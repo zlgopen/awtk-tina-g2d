@@ -73,3 +73,6 @@ g2d_tina_mem_create(146): ION_HEAP_TYPE 0x1
 g2d_tina_mem_create(154): ION_IOC_ALLOC succes, dmabuf-fd = 0, size = 1024
 ```
 
+## 5. 已知问题
+
+cache flush 有些问题，总是失败，可能出现局部闪烁，请熟悉这部分功能的朋友不吝指教。
