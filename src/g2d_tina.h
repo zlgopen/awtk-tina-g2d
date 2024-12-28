@@ -27,15 +27,32 @@
 
 BEGIN_C_DECLS
 
+/**
+ * @class g2d_tina_t
+ * tina linux 2d 加速。
+ */
+
+/**
+ * @method tk_g2d_init
+ * 初始化g2d。
+ * @return {ret_t} 成功返回RET_OK，失败返回RET_FAIL。
+ */
 ret_t tk_g2d_init(void);
+
+/**
+ * @method tk_g2d_deinit
+ * 反初始化g2d。
+ * @return {ret_t} 成功返回RET_OK，失败返回RET_FAIL。
+ */
+ret_t tk_g2d_deinit(void);
+
+/*public for tests */
 ret_t g2d_tina_fill_rect(bitmap_t* fb, const rect_t* dst, color_t c);
 ret_t g2d_tina_copy_image(bitmap_t* fb, bitmap_t* img, const rect_t* src, xy_t x, xy_t y);
 ret_t g2d_tina_rotate_image(bitmap_t* fb, bitmap_t* img, const rect_t* src, lcd_orientation_t o,
                             xy_t x, xy_t y);
 ret_t g2d_tina_blend_image(bitmap_t* fb, bitmap_t* img, const rect_t* dst, const rect_t* src,
                            uint8_t global_alpha);
-ret_t tk_g2d_deinit(void);
-
 END_C_DECLS
 
 #endif /*TK_G2D_TINA_H*/

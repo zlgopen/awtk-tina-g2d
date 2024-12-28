@@ -25,7 +25,17 @@
 #include "base/graphic_buffer.h"
 
 BEGIN_C_DECLS
+/**
+ * @class graphic_buffer_tina_t
+ * 图形缓冲对象。
+ */
 
+/**
+ * @method graphic_buffer_tina_get_mem
+ * 获取图形缓冲的内存。
+ * @param {graphic_buffer_t*} buffer 图形缓冲对象。
+ * @return {g2d_tina_mem_t*} 返回内存对象。
+ */
 g2d_tina_mem_t* graphic_buffer_tina_get_mem(graphic_buffer_t* buffer);
 
 END_C_DECLS
