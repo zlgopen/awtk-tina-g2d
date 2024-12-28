@@ -1,6 +1,6 @@
 # awtk-tina-g2d
 
-全志 tian linux 2D 图形加速插件。
+全志 Tina Linux 2D 图形加速插件。
 
 ![](docs/images/g2d.png)
 
