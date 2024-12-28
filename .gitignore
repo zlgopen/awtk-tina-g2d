@@ -1,0 +1,7 @@
+lib
+bin
+tags
+*.o
+*.a
+*.swp
+temp
