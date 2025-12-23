@@ -117,12 +117,36 @@ static uint32_t graphic_buffer_tina_get_physical_line_length(graphic_buffer_t* b
   return b->line_length;
 }
 
+static ret_t graphic_buffer_tina_set_physical_width(graphic_buffer_t* buffer, uint32_t width) {
+  graphic_buffer_tina_t* b = GRAPHIC_BUFFER_DEFAULT(buffer);
+  return_value_if_fail(b != NULL, RET_BAD_PARAMS);
+  b->w = width;
+  return RET_OK;
+}
+
+static ret_t graphic_buffer_tina_set_physical_height(graphic_buffer_t* buffer, uint32_t height) {
+  graphic_buffer_tina_t* b = GRAPHIC_BUFFER_DEFAULT(buffer);
+  return_value_if_fail(b != NULL, RET_BAD_PARAMS);
+  b->h = height;
+  return RET_OK;
+}
+
+static ret_t graphic_buffer_tina_set_physical_line_length(graphic_buffer_t* buffer, uint32_t line_length) {
+  graphic_buffer_tina_t* b = GRAPHIC_BUFFER_DEFAULT(buffer);
+  return_value_if_fail(b != NULL, RET_BAD_PARAMS);
+  b->line_length = line_length;
+  return RET_OK;
+}
+
 static const graphic_buffer_vtable_t s_graphic_buffer_tina_vtable = {
     .lock_for_read = graphic_buffer_tina_lock_for_read,
     .lock_for_write = graphic_buffer_tina_lock_for_write,
     .unlock = graphic_buffer_tina_unlock,
     .attach = graphic_buffer_tina_attach,
     .is_valid_for = graphic_buffer_tina_is_valid_for,
+    .set_width = graphic_buffer_tina_set_physical_width,
+    .set_height = graphic_buffer_tina_set_physical_height,
+    .set_line_length = graphic_buffer_tina_set_physical_line_length,
     .get_width = graphic_buffer_tina_get_physical_width,
     .get_height = graphic_buffer_tina_get_physical_height,
     .get_line_length = graphic_buffer_tina_get_physical_line_length,
